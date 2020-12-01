@@ -69,7 +69,7 @@ taskRouter.get('/tasks', auth, async (req, res) => {
 
     if (req.query.sortBy) {
         const splitQuery = req.query.sortBy.split('_')
-        console.log(par)
+        // console.log(par)
         // Set sort property - name of field is first val in parts
         // Set field value to asc or desc based second val in parts
         sort[splitQuery[0]] = splitQuery[1] === 'asc' ? 1 : -1
@@ -93,6 +93,7 @@ taskRouter.get('/tasks', auth, async (req, res) => {
 
         await req.user.populate({
             path: 'tasks',
+            // Match options object - define field .completed true or false
             match,
             options: {
                 // If limit/skip value provided in query, set limit/skip
