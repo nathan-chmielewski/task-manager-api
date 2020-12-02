@@ -147,7 +147,7 @@ userRouter.post('/users/logoutall', auth, async (req, res) => {
     }
 })
 
-// Read multiple users
+// Read user profile
 // Pass in auth middleware function as 2nd arg
 // to run before running route handler
 userRouter.get('/users/me', auth, async (req, res) => {
